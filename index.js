@@ -5,7 +5,7 @@ async function loadData() {
   let posts = await responsePosts.json();
 
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const li = document.createElement("li");
     li.innerText = post.title;
     ul.append(li);
@@ -15,3 +15,10 @@ async function loadData() {
 }
 
 loadData();
+
+const persons = ["silvy", "naty", "cris", "rub"]
+const lastnames =["guerra", "zamb", "mira", "vent"]
+
+const info_persons = [...persons, ...lastnames]
+
+console.log(info_persons);
