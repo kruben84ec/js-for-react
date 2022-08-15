@@ -1,11 +1,20 @@
-const user = {
-    name: "joe",
-    age: 30
+const button = document.createElement("button");
+button.innerText = "click me";
+const handleClick = () => {
+    alert('Click')
 }
 
-function printInfo(user) {
-    const {name, age} = user;
-    return  "<h3>Hola "+name+", tu edad es: "+age+"</h3>"
-}
+button.addEventListener('click', handleClick)
 
-document.body.innerHTML = printInfo(user)
+document.body.append(button)
+
+
+const showText = () => 'hola mundo';
+
+console.log(showText());
+
+//funcion que retorna un objecto en una linea
+
+const showObject = () => ({name: "Chris", age: 38})
+
+console.log(showObject);
