@@ -1,13 +1,11 @@
-const title = document.createElement('h1')
-title.innerText = "Hola mundo desde Js"
-document.body.append(title)
+const user = {
+    name: "joe",
+    age: 30
+}
 
-const botton = document.createElement('button')
-botton.innerText = 'click'
+function printInfo(user) {
+    const {name, age} = user;
+    return  "<h3>Hola "+name+", tu edad es: "+age+"</h3>"
+}
 
-botton.addEventListener('click', ()=> {
-    title.innerText = "Texto actualizado con js"
-    alert("Se actualizo!")
-})
-
-document.body.append(botton)
+document.body.innerHTML = printInfo(user)
