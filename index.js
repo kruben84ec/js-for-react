@@ -1,20 +1,17 @@
-const button = document.createElement("button");
-button.innerText = "click me";
-const handleClick = () => {
-    alert('Click')
+const ul = document.createElement("ul");
+const paisApi = "https://jsonplaceholder.typicode.com/photos"
+async function loadData() {
+  let responsePosts = await fetch(paisApi);
+  let posts = await responsePosts.json();
+
+  posts.forEach((post) => {
+    console.log(post);
+    const li = document.createElement("li");
+    li.innerText = post.title;
+    ul.append(li);
+  }
+  );
+  document.body.append(ul);
 }
 
-button.addEventListener('click', handleClick)
-
-document.body.append(button)
-
-
-const showText = () => 'hola mundo';
-
-console.log(showText());
-
-//funcion que retorna un objecto en una linea
-
-const showObject = () => ({name: "Chris", age: 38})
-
-console.log(showObject);
+loadData();
